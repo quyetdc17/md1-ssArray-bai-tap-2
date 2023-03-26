@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search ditz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Tra 1 trong các từ dưới đây: </h1>
+<ul>
+    <li>Multiplication</li>
+    <li>Operation</li>
+    <li>Output</li>
+    <li>Application</li>
+    <li>Calculation</li>
+</ul>
+<input type="text" id="text" placeholder="Enter text" oninput="search();">
+<p id="vietnamese"></p>
+<script>
+    let en = ["Multiplication", "Operation", "Output", "Application", "Calculation"];
+    let vn = ["Phép nhân", "Thao tác", "đưa ra", "Ứng dụng", "Tính toán"];
+
+    function search() {
+        let eng = document.getElementById('text');
+        let index = -1;
+        let result = document.getElementById('vietnamese');
+        for (let i = 0; i < en.length; i++) {
+            if (eng.value.toLowerCase() === en[i].toLowerCase()) {
+                index = i;
+            }
+        }
+        if (index !== -1) {
+            result.innerHTML = vn[index];
+        } else {
+            result.innerHTML = "Từ vựng nằm ngoài từ điển";
+        }
+
+    }
+</script>
+</body>
+
+</html>
+
+
